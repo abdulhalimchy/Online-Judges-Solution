@@ -1,19 +1,18 @@
 #include<bits/stdc++.h>
 #define MX 10005
 #define mod 10000007
-#define ll long long
 using namespace std;
 
 int a, b, c, d, e, f;
-ll dp[MX];
-ll fn( int n ) {
+int dp[MX];
+int fn( int n ) {
     if( n == 0 ) return a%mod;
     if( n == 1 ) return b%mod;
     if( n == 2 ) return c%mod;
     if( n == 3 ) return d%mod;
     if( n == 4 ) return e%mod;
     if( n == 5 ) return f%mod;
-    ll temp=0;
+    int temp=0;
     if(dp[n-1]!=-1)
     {
         temp+=dp[n-1];
@@ -89,7 +88,7 @@ int main() {
     while( cases-- ) {
             memset(dp, -1, sizeof(dp));
         scanf("%d %d %d %d %d %d %d", &a, &b, &c, &d, &e, &f, &n);
-        printf("Case %d: %lld\n", ++caseno, fn(n) % 10000007);
+        printf("Case %d: %d\n", ++caseno, fn(n) % 10000007);
     }
     return 0;
 }
